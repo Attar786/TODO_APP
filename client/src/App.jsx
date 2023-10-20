@@ -19,13 +19,12 @@ function App() {
     <div className="container">
       <h1>To Do App In MERN-Stack</h1>
       <div className="top">
-      <input type="text" placeholder='Enter a todo work' />
-      <button onClick={Add_Data} value={text}  onChange={(e)=> settext(e.target.value)}>Add Todo</button>
+      <input type="text" placeholder='Enter a todo work'  value={text}  onChange={(e)=> settext(e.target.value)} />
+      {/* <button onClick={Add_Data} value={text}  onChange={(e)=> settext(e.target.value)}>Add Todo</button> */}
+      <button onClick={()=> Add_Data(text,settext,setTodo)} >Add Todo</button>
       </div>
 <div className="table">
-
 {todo.map((item)=> <Todo key= {item._id} text= {item.text}/>)}
-
 </div>
     </div>
     </>

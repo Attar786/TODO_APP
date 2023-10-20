@@ -11,7 +11,13 @@ const get_all_data = (setTodo) => {
 }
 
 const Add_Data = (text, settext , setTodo) => {
-
+axios.post( `${baseurl}/save`,{text})
+.then((data)=>
+{
+    console.log(data);
+    settext("") 
+    get_all_data(setTodo)
+})
 }
 
 
